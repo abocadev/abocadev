@@ -1,0 +1,384 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@ TUTORIAL DE REACTJS @@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+###############################
+### I. INTRODUCCIÓN A REACT ###
+###############################
+
+1-. ¿QUE ES REACT?
+
+React, a veces denominado framework de JavaScript Frontend, es una biblioteca de JavaScript creada por Facebook.
+
+React es una herramienta para construir componentes de interfaz de usuario.
+
+
+2-. ¿CÓMO FUNCIONA REACT
+
+React crea un DOM VIRTUAL en la memoria.
+
+En lugar de manipular el DOM del navegador directamente, React crea un DOM virtual en la memoria, donde realiza toda la manipulación necesaria antes de realizar los cambios en el DOM del navegador.
+
+¡React solo cambia lo que necesita ser cambiado!
+
+React descubre qué cambios se han realizado y cambia "solo" lo que debe cambiarse.
+
+Aprenderá los diversos aspectos de cómo React hace esto en el resto de este tutorial.
+
+
+3-. HISTORIAL DE REACT JS:
+
+La versión actual de ReactJS es V17.0.2 (agosto de 2021).
+
+El lanzamiento inicial al público (V0.3.0) fue en julio de 2013.
+
+ReactJS se utilizó por primera vez en 2011 para la función Newsfeed de Facebook.
+
+El ingeniero de software de Facebook, Jordan Walke, lo creó.
+
+La versión actual de "create-react-app" es V4.0.3 (agosto de 2021).
+
+"create-react-app" incluye herramientas integradas como webpack, Babel y ESLint.
+
+
+#####################################
+### II. PRIMEROS PASOS DE REACTJS ###
+#####################################
+
+Para usar React en producción, necesita "npm", que se incluye con "NodeJS".
+
+Para obtener una descripción general de lo que es React, puede escribir código React directamente en HTML.
+
+Pero para usar React en producción, necesita "npm" y "NodeJS" instalados.
+
+
+1-. REACT DIRECTAMENTE EN HTML:
+
+La forma más rápida de comenzar a aprender React es escribir React directamente en sus archivos HTML.
+
+Comience por incluir tres scripts, los dos primeros nos permiten escribir código React en nuestros JS, y el tercero, Babel, nos permite escribir sintaxis JSX y ES6 en navegadores más antiguos.
+
+Aprenderá más sobre JSX en el capítulo "React JSX".
+
+Ejemplo:
+
+    """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+
+        <div id="mydiv"></div>
+
+        <script type="text/babel">
+        function Hello() {
+            return <h1>Hello World!</h1>;
+        }
+
+        ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+        </script>
+
+    </body>
+    </html>
+    """
+
+Esta forma de usar React puede estar bien para fines de prueba, pero paara la producción deberá configurar un "entorno React".
+
+
+2-. CONFIGURAR DE UN ENTORNO DE REACT:
+
+Si tiene instalados "npx" y "NodeJS", puede crear una aplicación React usando "create-react-app".
+
+Si anteriormente realizó una instalación "create-react-app" global, se recomienda que desinstale el paquete para asegurarse de que "npx" siempre use la última versión de "create-react-app".
+
+Para desinstalar, ejecute este comando: "npm uninstall -g create-react-app".
+
+Ejecute este comando para crear una aplicación React llamada "my-react-app":
+
+    """
+    npx create-react-app my-react-app
+    """
+
+El "create-react-app" configurará todo lo que necesita para ejecutar una aplicación React.
+
+
+3-. EJECUTA LA APLICACIÓN REACT:
+
+¡Ahora está listo para ejecutar su primera aplicación React real!
+
+Ejecute este comando para moverse al directorio "my-react-app":
+
+    """
+    cd my-react-app
+    """
+
+Y luego ejecute este comando para ejecutar la aplicación de React "my-react-app":
+
+    """
+    npm start
+    """
+
+¡Aparecerá una nueva ventana del navegador con su aplicación de React recién creada! Si no, abra su navegador y escriba "localhost:3000" en la barra de direcciones.
+
+
+4-. MODIFICAR LA APLICACIÓN DE REACT:
+
+Hasta aquí todo bien, pero ¿cómo cambio el contenido?
+
+Busque en el directorio "my-react-app" y encontrará una carpeta "src". Dentro de la carpeta "src" hay un archivo llamado "App.js", abreló y se verá así:
+
+    """
+    import logo from './logo.svg';
+    import './App.css';
+
+    function App() {
+    return (
+    <div className="App">
+        <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+            Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Learn React
+        </a>
+        </header>
+    </div>
+    );
+    }
+
+    export default App;
+    """
+
+Intente cambiar el contenido HTML y guarde el archivo.
+
+NOTA: Tenga en cuenta que los cambios son visibles inmediatamente después de guardar el archivo, ¡no es necesario que vuelva a cargar el navegador!
+
+Ejemplo:
+
+    Reemplaze todo el contenido dentro de "<div className="app">" con un elemento "<h1>".
+
+    Vea los cambios en el navegador cuando haga clic en Guardar.
+
+    """
+    function App(){
+        return(
+            <div className="App">
+                <h1>Hello World!</h1>
+            </div>
+        );
+    }
+
+    export default App;
+    """
+
+NOTA: Tenga en cuenta que hemos eliminado las importaciones que no necesitamos (logo.svg y App.css).
+
+
+5-. ¿QUE SIGUE?
+
+Ahora tiene un entorno React en su computadora y está listo para aprender más sobre React.
+
+En el resto de este tutorial, utilizaremos nuestra herramienta "Mostrar React" para explicar los diversos aspectos de React y cómo se muestran en el navegador.
+
+Si desea seguir los mismos pasos en su computadora, comience por desmontar la carpeta "src" para que solo contenga un archivo: "index.js". También debe eliminar las líneas de código innecesarias dentro del archivo "index.js" para que se vean como el ejemplo en la herramienta "Mostrar React" a continuación:
+
+    """
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+
+    const myfirstelement = <h1>Hello React!</h1>
+
+    ReactDOM.render(myfirstelement, document.getElementById('root'));
+    """
+
+
+#####################
+### II. REACT ES6 ###
+#####################
+
+1-. ¿QUÉ ES ES6?
+
+ES6 significa ECMAScript 6.
+
+ECMAScript se creó para estandarizar JavaScript, y ES6 es la sexta versión de ECMAScript, se publicó en 2015 y también se conoce como ECMAScript 2015.
+
+2-. ¿POR QUÉ DEBO APRENDER ES6?
+
+React usa ES6, y debería estar familiarizado cpn algunas de las nuevas características como:
+
+    · Clases
+
+    · Funciones de flecha
+
+    · Variables (let, const, var)
+
+    · Métodos de matriz como ".map()"
+
+    · desestructuración
+
+    · Módulos
+
+    · Operador Ternario
+
+    · Operador de propagación
+
+    ##########################
+    # 1. CLASES DE REACT ES6 #
+    ##########################
+
+1-. CLASES:
+
+ES6 introdujo clases.
+
+Una clase es un tipo de función, pero en lugar de usar la palabra clave "function" para inicializarla, usamos la palabra clave "class" y las propiedades se asignan dentro de un método "constructor()".
+
+Ejemplo:
+
+Un constructor de clase simple:
+
+    """
+    class Car{
+        constructor(name){
+            this.brand = name;
+        }
+    }
+    """
+
+NOTA: Observe el caso del nombre de la clase. Hemos comenzado el nombre, "car", con un carácter en mayúscula. Esta es una convención de nomenclotura estándar para las clases.
+
+Ahora puedes crear objetos usando la clase Car.
+
+Ejemplo:
+
+Cree un objeto llamado "mycar" basado en la clase Car:
+
+    """
+    class Car{
+        constructor(name){
+            this.brand = name;
+        }
+    }
+
+    const mycar = new Car("Ford");
+    """
+
+NOTA: La función constructora se llama automáticamente cuando se inicializa el objeto.
+
+
+2-. MÉTODO EN CLASES:
+
+Puede agregar sus propios métodos en una clase.
+
+Ejemplo:
+
+Cree un método llamado "present":
+
+    """
+    class Car{
+        constructor(name){
+            this.brand = name;       
+        }
+
+        present(){
+            return 'I have a ' + this.brand;
+        }
+    }
+
+    const mycar = new Car("Ford");
+    mycar.present();
+    """
+
+Como puede ver en el ejemplo anterior, llama al método haciendo referencia al nombre del método del objeto seguido de paréntesis (los parámetros irían dentro de los paréntesis).
+
+
+3-. HERENCIA DE CLASE:
+
+Para crear una herencia de clase, utilice la palabra clave "extends".
+
+Una clase creada con una herencia de clase hereda todos los métodos de otro clase.
+
+Ejemplo:
+
+Cree una clase llamada "Modelo" que heredará los métodos de la clase "Coche":
+
+    """
+    class Car{
+        constructor(name){
+            this.brand = name;
+        }
+
+        present(){
+            return 'I have a ' + this.brand;
+        }
+    }
+
+    class Model extends Car{
+        constructor(name, mod){
+            super(name);
+            this.model = mod;
+        }
+
+        show(){
+            return this.present() + ', it is a ' + this.model;
+        }
+    }
+
+    const mycar = new Model("Ford", "Mustang");
+    mycar.show();
+    """
+
+El método "super()" se refiere a la clase padre.
+
+Al llamar al método "super()" en el método constructor, llamamos al método constructor del padre y obtenemos acceso a las propiedades y métodos del padre.
+
+    #######################################
+    # 2. FUNCIONES DE FLECHA DE REACT ES6 #
+    #######################################
+
+1-. FUNCIONES DE FLECHA:
+
+Las funciones de flecha nos permiten esciribir una sintaxis de función más corta:
+
+    ANTES:
+
+    """
+    hello = function(){
+        return "Hello World";
+    }
+    """
+
+    CON FUNCIÓN DE FLECHA:
+
+    """
+    hello = () => {
+        return "Hello World";
+    }
+    """
+
+¡Se hace más corto! Si la función tiene solo una declaración y la declaración devuelve un valor, puede quitar los corchetes y la palabra clave "return":
+
+    LAS FUNCIONES DE FLECHA DEVUELVEN UN VALOR POR DEFECTO:
+
+    """
+    hello = () => "Hello World!";
+    """
+
+NOTA: Esto funciona solo si la función tiene solo una declaración.
+
+Si tiene parámetros, los pasa dentro de los paréntesis:
+
+    FUNCIÓN DE FLECHAS CON PARÁMETROS:
+
+    """
+    
