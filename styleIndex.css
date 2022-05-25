@@ -1,0 +1,44 @@
+/* IMPORTAR LAS FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    background-color: #1f1c1c;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+main > .text{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 15vw;
+    max-width: min-content;
+}
+
+main > .text > h1{
+    font-size: 9vw;
+    font-family: 'Koulen', cursive;
+}
+
+.white{
+    color: white;
+}
+
+.red{
+    color: red;
+}
+
+#last{
+    display: flex;
+}
+
+#last > a{
+    text-decoration: none;
+}
