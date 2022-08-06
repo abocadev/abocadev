@@ -12,33 +12,41 @@ main{
     width: 100vw;
     height: 100vh;
     display: flex;
+    align-items: center;
 }
 
-main > .text{
-    display: none;
-    justify-content: center;
+main > div{
+    margin: 15vw;
     flex-direction: column;
-    margin-left: 15vw;
-    max-width: min-content;
+    height: max-content;
 }
 
-main > .text > h1{
-    font-size: 9vw;
+main > div > h1{
+    font-size: 7.5vw;
     font-family: 'Koulen', cursive;
+    width: max-content;
+    margin-top: 5vh;
 }
+
+main > div > h1:nth-child(1){
+    margin-top: 0vh;
+}
+
+main > div > h1:nth-child(2){
+    margin-top: 0vh;
+}
+
 
 .white{
     color: white;
 }
 
 .red{
+    margin-top: 5vh;
     color: red;
 }
 
-#last{
-    display: flex;
-}
-
-#last > a{
+h1 > a{
     text-decoration: none;
+    color: none;
 }
